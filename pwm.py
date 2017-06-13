@@ -57,16 +57,22 @@ t.tag_configure('big', font=('Times', 15))
 
 def calculate():
 
+
     def calc(m, ps, p):
-        last = 0
-        return def next():
-            nonlocal m, ps, p
-            nonlocal last
-            
-            new = round(m / ((ps + 1) * (p)) + 1)
-            while new == last:
-                new = round(m / ((ps + 1) * (p)) + 1)
-            return round(m / ((ps + 1) * (p)) + 1)
+        return round(m / ((ps + 1) * (p)) + 1)
+
+#    def calcV2(m, ps, p):
+#        last = 0
+#        def next():
+#            nonlocal last
+#            
+#            new = round(m / ((ps + 1) * (p)) + 1)
+#            while new == last:
+#                new = round(m / ((ps + 1) * (p)) + 1)
+#            return round(m / ((ps + 1) * (p)) + 1)
+#        
+#        return next
+
     print("---START---")
 
     t.delete("1.0", END)
