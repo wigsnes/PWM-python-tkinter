@@ -57,16 +57,19 @@ t.tag_configure('big', font=('Times', 15))
 
 def calculate():
 
+#    def calc2(m, ps, p):
+#        last = 0
+#        return def next2():
+#            nonlocal m, ps, p
+#            nonlocal last
+#            
+#            new = round(m / ((ps + 1) * (p)) + 1)
+#            while new == last:
+#                new = round(m / ((ps + 1) * (p)) + 1)
+#            return round(m / ((ps + 1) * (p)) + 1)
+    
     def calc(m, ps, p):
-        last = 0
-        return def next():
-            nonlocal m, ps, p
-            nonlocal last
-            
-            new = round(m / ((ps + 1) * (p)) + 1)
-            while new == last:
-                new = round(m / ((ps + 1) * (p)) + 1)
-            return round(m / ((ps + 1) * (p)) + 1)
+        return round(m / ((ps + 1) * (p)) + 1)
     print("---START---")
 
     t.delete("1.0", END)
@@ -85,7 +88,8 @@ def calculate():
     for ps in range(preescaler_start, preescaler_Stop):
         for p in range(period_start, period_Stop):
             num = calc(micro, ps, p)
-            print("Speed:{}Hz, Prescaler:{}, Period:{}\n".format(num, ps, p))
+            # print("Speed:{}Hz, Prescaler:{}, Period:{}\n".format(num, ps, p))
+        
             if calc(micro, ps, period_Stop) > (speed + spread) or (num < (speed - spread)) or num == 0:
                 break
             if (ps + 1) * (p) <= 0 or num == num_temp:
